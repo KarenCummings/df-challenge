@@ -1,0 +1,20 @@
+body {
+    display: block;
+}
+table, th, td {
+   border: none;
+   padding: 6px;
+   border-collapse: all;
+}
+th {
+    text-align: left;
+    vertical-align: middle;
+    border-top: 2px solid gray;
+    border-bottom: 2px solid gray;
+    font-size: 16px;
+    text-decoration-color: red;
+}
+td {
+    text-align: left;
+    border-bottom: 2px solid gray;
+}

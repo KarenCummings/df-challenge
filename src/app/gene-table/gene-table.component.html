@@ -1,0 +1,29 @@
+<div style="overflow-x:auto; overflow-y: auto">
+<table>
+	<tr>
+		<p>Search for Alteration:</p>
+		<app-searchbox (update)="term = $event"></app-searchbox>
+	</tr>
+	<tr>
+		<td>
+			<table style='border: none'>
+				<tr>
+					<th>Alteration</th>
+					<th>Hugo Symbol</th>
+					<th>Entrez Gene Id</th>
+					<th>OncoGene TSG</th>
+				</tr>
+				<!-- <tr *ngFor = 'let oncoSet of oncoData'> -->
+				<tr *ngFor = 'let oncoSet of oncoData | search: term'>
+					<td>{{oncoSet.alteration}}</td>
+					<td>{{oncoSet.gene.hugoSymbol}}</td>
+					<td>{{oncoSet.gene.entrezGeneId}}</td>
+					<td>{{oncoSet.gene.oncogene?'OncoGene':''}} {{oncoSet.gene.tsg?'TSG':''}}</td>
+				</tr>
+			</table>
+		</td>
+		<td>Some lovely graph</td>
+	</tr>
+
+</table>
+</div>
